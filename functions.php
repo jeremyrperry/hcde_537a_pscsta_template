@@ -19,3 +19,21 @@ require_once($include_path.'metadata/data_settings.php');
 require_once($include_path.'layout/layout_custom.php');
 require_once($include_path.'layout/layout_post.php');
 require_once($include_path.'layout/layout_comments.php');
+
+if ( function_exists('register_sidebar') )
+    register_sidebar( array(
+   'name' => __( 'Header Widget'),
+   'id' => 'header_widget',
+   'description' => __( 'Header Widget', 'intuition' ),
+   'before_widget' => '<aside id="%1$s" class="widget %2$s header_widget">',
+   'after_widget' => "</aside>",
+   ) );
+
+if ( function_exists('register_sidebar') )
+    register_sidebar( array(
+   'name' => __( 'Footer Sidebar 4'),
+   'id' => 'footersidebar4',
+   'description' => __( 'Footer Sidebar 4', 'intuition' ),
+   'before_widget' => '<aside id="%1$s" class="widget %2$s footersidebar4">',
+   'after_widget' => "</aside>",
+   ) );

@@ -7,13 +7,14 @@
 <div id="main" class="main">
 	<div class="container">
 		<section id="content" class="content <?php cpotheme_sidebar_position(); ?>">
+			<h1><?php echo get_the_title(); ?></h1>
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="page-content">
 					<?php the_content(); ?>
 					<?php wp_link_pages(array('before' => '<div class="page-link">'.__('Pages', 'cpotheme').':', 'after' => '</div>')); ?>
 				</div>
 			</div>
-			<?php comments_template('', true); ?>
+			<?php //comments_template('', true); ?>
 		</section>
 		<?php get_sidebar(); ?>
 	</div>

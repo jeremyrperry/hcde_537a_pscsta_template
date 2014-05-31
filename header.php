@@ -5,6 +5,48 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <title><?php wp_title('|', true, 'right'); ?></title>
     <?php wp_head(); ?>
+	<script>
+	var isMobile =  {
+	    Android: function() {
+	        return navigator.userAgent.match(/Android/i);
+	    },
+	    BlackBerry: function() {
+	        return navigator.userAgent.match(/BlackBerry/i);
+	    },
+	    iOS: function() {
+	        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+	    },
+	    Opera: function() {
+	        return navigator.userAgent.match(/Opera Mini/i);
+	    },
+	    Windows: function() {
+	        return navigator.userAgent.match(/IEMobile/i);
+	    },
+	    any: function() {
+	        return (this.Android() || this.BlackBerry() || this.iOS() || this.Opera() || this.Windows());
+	    }
+	};
+	jQuery(document).ready(function(){
+		var clickFunc = 'click';
+		if(isMobile.any()){
+			clickFunc = 'touchstart';
+			function changeIt(){
+				var leftAmt = 0;
+				if(window.innerWidth > window.innerHeight){
+					leftAmt = eval(window.innerWidth - 260);
+				}
+				jQuery('#header .site-logo').css({
+					left: leftAmt+'px'
+				});
+			}
+			window.addEventListener('orientationchange', changeIt);
+			changeIt();
+		}
+		jQuery('.accordion2 h2, .accordion2 .arrow').on(clickFunc, function(){
+			jQuery(this).closest('.accordion2').toggleClass('active');
+		});
+	});
+</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -25,9 +67,12 @@
 			<header id="header" class="header">
 				<div class="container">
 					<?php cpotheme_logo(205, 50); ?>
-					
-					<?php cpotheme_menu(); ?>
-					
+					<div class="search_area">
+						<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Header Widget') ) : ?>
+						<?php endif;?>
+					</div>
+						<?php cpotheme_menu(); ?>
+
 					<?php cpotheme_mobile_menu(); ?>
 					
 					<div class='clear'></div>
