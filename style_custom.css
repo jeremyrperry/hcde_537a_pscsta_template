@@ -116,7 +116,16 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 	color: #364768;
 }
 
-.post-img img {
+#content .post-edit-link{
+	background-color: #019fde;
+}
+
+#content .readmore{
+	border-radius: 2px;
+	color: white;
+}
+
+.post-image img {
 	max-width: 500px;
 	height: auto;
 }
@@ -383,18 +392,16 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 		word-wrap: break-word;
 		hyphens: auto;
 	}
-	.inline > div:nth-child(1):nth-last-child(2),
-	.inline > div:nth-child(2):nth-last-child(1) {
+	
+	.inline > div:nth-child(1):nth-last-child(2),																																																																				.inline > div:nth-child(2):nth-last-child(1) {
 		width: 40%;
 	}
-	.inline > div:nth-child(1):nth-last-child(3),																																														.inline > div:nth-child(2):nth-last-child(2),
-	.inline > div:nth-child(3):nth-last-child(1) {
+	
+	.inline > div:nth-child(1):nth-last-child(3),																																																																					.inline > div:nth-child(3):nth-last-child(1) {
 		width: 40%;
 	}
-	.inline > div:nth-child(1):nth-last-child(4),
-	.inline > div:nth-child(2):nth-last-child(3),
-	.inline > div:nth-child(3):nth-last-child(2),
-	.inline > div:nth-child(4):nth-last-child(1) {
+	
+	.inline > div:nth-child(1):nth-last-child(4),																																																																					.inline > div:nth-child(4):nth-last-child(1) {
 		width: 40%;
 	}
 }
@@ -434,19 +441,14 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 		background-color: rgb(133,196,236);
 	}
 	
-	.inline > div:nth-child(1):nth-last-child(2),
-	.inline > div:nth-child(2):nth-last-child(1) {
+	.inline > div:nth-child(1):nth-last-child(2),																																																																					.inline > div:nth-child(2):nth-last-child(1) {
 		width: 49%;
 	}
-	.inline > div:nth-child(1):nth-last-child(3),
-	.inline > div:nth-child(2):nth-last-child(2),
-	.inline > div:nth-child(3):nth-last-child(1) {
+	
+	.inline > div:nth-child(1):nth-last-child(3),																																																																		.inline > div:nth-child(3):nth-last-child(1) {
 		width: 49%;
 	}
-	.inline > div:nth-child(1):nth-last-child(4),
-	.inline > div:nth-child(2):nth-last-child(3),
-	.inline > div:nth-child(3):nth-last-child(2),
-	.inline > div:nth-child(4):nth-last-child(1) {
+	.inline > div:nth-child(1):nth-last-child(4),																																																																			.inline > div:nth-child(4):nth-last-child(1) {
 		width: 49%;
 	}
 }
@@ -465,19 +467,13 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 		width: 320px;
 		height: 86px;
 	}
-	.inline > div:nth-child(1):nth-last-child(2),
-	.inline > div:nth-child(2):nth-last-child(1) {
+	.inline > div:nth-child(1):nth-last-child(2),																																																																					.inline > div:nth-child(2):nth-last-child(1) {
 		width: 50%;
 	}
-	.inline > div:nth-child(1):nth-last-child(3),
-	.inline > div:nth-child(2):nth-last-child(2),
-	.inline > div:nth-child(3):nth-last-child(1) {
+	.inline > div:nth-child(1):nth-last-child(3),																																																																			.inline > div:nth-child(3):nth-last-child(1) {
 		width: 50%;
 	}
-	.inline > div:nth-child(1):nth-last-child(4),
-	.inline > div:nth-child(2):nth-last-child(3),
-	.inline > div:nth-child(3):nth-last-child(2),
-	.inline > div:nth-child(4):nth-last-child(1) {
+	.inline > div:nth-child(1):nth-last-child(4),																																																																			.inline > div:nth-child(4):nth-last-child(1) {
 		width: 50%;
 	}
 }
@@ -489,7 +485,7 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 }
 
 @media only screen and (max-device-width: 500px) {
-	.post-img img {
+	.post-image img {
 		max-width: 100%;
 	}
 }
