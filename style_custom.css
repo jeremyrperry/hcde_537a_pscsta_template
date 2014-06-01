@@ -425,11 +425,13 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 		float: left;
 		position: relative;
 		top: 10px;
+		text-align: left;
 	}
 	
 	.container #text-6 {
 		top: 10px;
 		left: 0;
+		text-align: left;
 	}
 	
 	#menu-main {
@@ -458,7 +460,6 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 		margin-top: 68px;
 		left: -240px;
 		margin-bottom: 0;
-		text-align: left;
 	}
 }
 
