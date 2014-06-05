@@ -38,6 +38,20 @@
 				jQuery('#header .site-logo').css({
 					left: leftAmt+'px'
 				});
+				if(isMobile.iOS() && window.innerWidth > 766){
+					var newWidth = eval(window.innerWidth+'-'+40);
+					console.log('showing new width');
+					console.log(newWidth);
+					var newHeight = newWidth*0.2;
+					jQuery('#main_page_banner').css({
+						'width': newWidth+'px',
+						'height': newHeight+'px',
+						'background-size': newWidth+'px '+newHeight+'px',
+					});
+					jQuery('#main_page_news').css({
+						'height': eval(newHeight+'-'+20)+'px',
+					});
+				}
 			}
 			window.addEventListener('orientationchange', changeIt);
 			changeIt();
@@ -74,7 +88,9 @@
 						<?php cpotheme_menu(); ?>
 
 					<?php cpotheme_mobile_menu(); ?>
-					
+					<?php if (!is_page('Home') && function_exists('yoast_breadcrumb') ) {
+						yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+					} ?>
 					<div class='clear'></div>
 				</div>
 			</header>
@@ -120,7 +136,6 @@
 			<?php endif; ?>
 			
 			<?php } ?>
-			
 				
 			<?php if(is_home() || is_front_page()){ ?>
 			

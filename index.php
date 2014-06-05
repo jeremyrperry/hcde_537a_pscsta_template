@@ -2,7 +2,7 @@
 
 <div id="main" class="main">
 	<div class="container">		
-		<section id="content" class="content <?php cpotheme_sidebar_position(); ?>">
+		<section id="content" class="content <?php cpotheme_sidebar_position(); ?> content_post">
 			<?php if(have_posts()): while(have_posts()): the_post(); ?>
 			<?php get_template_part('element', 'blog'); ?>
 			<?php endwhile; ?>

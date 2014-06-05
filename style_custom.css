@@ -10,17 +10,14 @@ which means that your rules can take precedence and override the theme CSS
 rules. Just write here what you want to change, you don't need to copy all
 your theme's stylesheet content.
 */
-.header_widget {
-	float: right;
-	position: relative;
-	top: 10px;
-}
-
 .container #text-6 {
 	position: relative;
-	top: 60px;
-	left: 240px;
+	margin-top: -20px;
 	text-align: right;
+}
+
+#header {
+	padding-bottom: 0;
 }
 
 #header .site-logo img {
@@ -34,8 +31,12 @@ your theme's stylesheet content.
 	background-size: contain;
 }
 
+.search_area {
+	float: right;
+	margin-right: -20px;
+}
+
 #menu-main {
-	margin-top: 30px;
 	position: relative;
 	float: left;
 	width: 1010px;
@@ -91,7 +92,11 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 	border-bottom-right-radius: 5px;
 }
 
-#menu-main li ul > li:last-child a {
+#menu-main li ul li a {
+	font-size: 16px;
+}
+
+#menu-main li ul > li:last-child a, #menu-main li ul > li:last-child a:hover, #menu-main li ul > li:last-child:hover {
 	border-bottom-left-radius: 5px;
 }
 
@@ -100,29 +105,65 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 }
 
 #menu-main li ul li:not(:last-child) {
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #d3d3d3;
 	margin-left: 5px;
+}
+
+#main {
+	padding-top: 0;
+}
+
+#menu-mobile {
+	margin-top: -20px;
 }
 
 #content {
 	width: 1010px;
 }
 
-#content a {
+/*#content a {
 	color: #019fde;
-}
-
-#content a:visited {
+}*/
+/*#content a:visited {
 	color: #364768;
-}
-
-#content .post-edit-link{
+}*/
+#content .post-edit-link {
 	background-color: #019fde;
 }
 
-#content .readmore{
+#content .readmore {
 	border-radius: 2px;
 	color: white;
+}
+
+#content.content_post {
+	max-width: 635px;
+}
+
+#main_page_banner {
+	background: url(/wp/wp-content/uploads/2014/06/news_home.jpg) left no-repeat;
+	width: 1000px;
+	height: 205px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#main_page_news {
+	float: right;
+	margin-right: 20px;
+	height: 140px;
+	padding: 5px;
+	padding-left: 15px;
+	width: 420px;
+	background-color: #ffffff;
+	opacity: .9;
+	color: #364768;
+	word-wrap: break-word;
+}
+
+a.button2styles, a:visited.button2styles {
+	text-decoration: none;
+	color: #fff;
 }
 
 .post-image img {
@@ -130,14 +171,35 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 	height: auto;
 }
 
+a.no_underline {
+	text-decoration: none;
+}
+
+/*.site_button {
+	background: #019fde;
+	background: -moz-linear-gradient(top,#019fde 0%,#006dac 100%);
+	background: -webkit-linear-gradient(top,#019fde 0%,#006dac 100%);
+	background: linear-gradient(to bottom,#019fde 0%,#006dac 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#019fde',endColorstr='#006dac',GradientType=0);
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+	border-color: #006dac;
+	width: 79px;
+	height: 43px;
+	line-height: 79px;
+	vertical-align: middle;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+}*/
 #footersidebar {
-	width: 1010px;
+	width: 1012px;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
 	left: 18px;
 	background-color: rgb(133,196,236);
-	border-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 	margin-top: 20px;
 }
 
@@ -185,7 +247,7 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 	color: #ecf0f1;
 }
 
-.button {
+/*.button {
 	-moz-box-shadow: inset 0 1px 0 0 #ffffff;
 	-webkit-box-shadow: inset 0 1px 0 0 #ffffff;
 	box-shadow: inset 0 1px 0 0 #ffffff;
@@ -228,11 +290,16 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 .button.large {
 	width: 200px;
 	height: 63px;
-}
-
+}*/
 .inline > div {
 	display: inline-block;
 	vertical-align: top;
+	padding: 0;
+}
+
+.inline > div * {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .inline > div:nth-child(1):nth-last-child(1) {
@@ -241,7 +308,7 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 
 .inline > div:nth-child(1):nth-last-child(2),
 .inline > div:nth-child(2):nth-last-child(1) {
-	width: 49%;
+	width: 47%;
 }
 
 .inline > div:nth-child(1):nth-last-child(3),
@@ -257,8 +324,8 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 	width: 24%;
 }
 
-#inline2_main {
-	padding-bottom: 20px;
+.inline.home_page_inline div {
+	margin-bottom: 20px;
 }
 
 #inline2_first {
@@ -268,6 +335,22 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 
 #inline2_second {
 	width: 75%;
+	overflow: hidden;
+}
+
+#inline3_first {
+	width: 20%;
+	float: left;
+}
+
+#inline3_middle {
+	width: 20%;
+	float: left;
+	overflow: hidden;
+}
+
+#inline3_last {
+	width: 20%;
 	overflow: hidden;
 }
 
@@ -281,6 +364,119 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 	padding-bottom: 20px;
 }
 
+#form_styles {
+	padding: 8px;
+	background: #CCC;
+	border: #000;
+	margin-left: 40px;
+}
+
+#form_text {
+	width: 50%;
+}
+
+.ss-base-body {
+	background-color: #ababab;
+	font-family: sans-serif, sans-serif;
+}
+
+.ss-form-container {
+	padding: 15px;
+	background-color: #f7f7f7;
+	border-color: #4a4a4a;
+}
+
+div.ss-form-title {
+	background-color: #5e5e5e;
+	padding: 15px;
+	margin: -15px -15px 15px;
+	color: #ebebeb;
+	text-align: left;
+}
+
+.ss-choice-item {
+	margin: 0;
+	line-height: 1.3em;
+	padding-bottom: .5em;
+	list-style-type: none;
+}
+
+.errorbox-bad {
+	background-color: #e8dfdf;
+}
+
+.ss-section-title {
+	background-color: transparent;
+}
+
+.ss-submit div.ss-form-entry {
+	background: none;
+	border: none;
+}
+
+.ss-q-help {
+	display: block;
+}
+
+.ss-q-help {
+	margin: .1em 0 .25em;
+}
+
+.ss-secondary-text {
+	color: #666;
+}
+
+.ss-textarea {
+	max-width: 99%;
+}
+
+.ss-question-list {
+	list-style: none;
+}
+
+.ss-required-asterisk {
+	color: #c43b1d;
+}
+
+.ss-choices {
+	list-style: none;
+	padding: 0;
+}
+
+.ss-choices {
+	margin: .5em 0 0;
+}
+
+.ss-choice-item {
+	margin: 0;
+	line-height: 1.3em;
+	padding-bottom: .5em;
+}
+
+.ss-form-entry input {
+	vertical-align: middle;
+	margin-left: 0;
+	margin-top: 0;
+}
+
+/*.button2, .button2:link, .button2:visited {
+	background: linear-gradient(to bottom,#019FDE 0%,#006DAC 100%) repeat scroll 0 0 transparent;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+	border-color: #006DAC;
+	width: auto;
+	display: inline-block;
+	border: 1px solid #888;
+	margin: 5px 0;
+	padding: 12px 15px;
+	color: #FFF;
+	border-radius: 2px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.button2:hover {
+	background: #019fde;
+}*/
 .accordion2 {
 	width: 100%;
 	border: none;
@@ -289,10 +485,12 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 .accordion2 .arrow {
 	float: right;
 	z-index: 10000;
-	width: 50px;
-	height: 36px;
-	margin-top: 5px;
+	width: 40px;
+	height: 29px;
+	margin-top: 8px;
+	margin-right: 5px;
 	background: url(/wp/wp-content/uploads/2014/05/arrow.gif) left no-repeat;
+	background-size: contain;
 }
 
 .accordion2 .txt {
@@ -304,7 +502,7 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 .accordion2 h2 {
 	background-color: rgb(228,228,228);
 	width: 1010px;
-	height: 45px;
+	min-height: 45px;
 	line-height: 45px;
 	padding-left: 5px;
 	color: #314861;
@@ -339,6 +537,52 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 	padding-top: 10px;
 }
 
+.competition_page_button {
+	border-radius: 5px;
+	padding: 25px;
+	background: #85C4EC;
+	width: 180px;
+	height: 275px;
+	color: #364768;
+}
+
+a.button_link_style {
+	padding: 5px 10px;
+	border-radius: 2px;
+	text-decoration: none;
+}
+
+div.larger_button {
+	padding: 12px 15px;
+	padding-left: 0;
+}
+
+.home_page_button {
+	border-radius: 5px;
+	padding: 20px;
+	background: #85C4EC;
+	width: 215px;
+	height: 205px;
+	color: #364768;
+}
+
+.home_page_button h3 {
+	font-weight: bold;
+}
+
+/*.more_button_click {
+	background: url(http://pscsta.susanrevans.com/wp/wp-content/uploads/2014/06/more_button_click.png) left no-repeat;
+	width: 258px;
+	height: 27px;
+	background-size: contain;
+}
+
+.more_button_static {
+	background: url(http://pscsta.susanrevans.com/wp/wp-content/uploads/2014/06/more_button_static.png) left no-repeat;
+	width: 353px;
+	height: 124px;
+	background-size: contain;
+}*/
 @media only screen and (max-device-width: 1010px) {
 	#menu-main, #footersidebar, .accordion2 h2, #content {
 		width: 100%;
@@ -346,8 +590,13 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 	
 	#footersidebar {
 		left: 0;
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
+	}
+	
+	#main_page_banner {
+		width: 100%;
+		height: auto;
+		background: url(/wp/wp-content/uploads/2014/06/news_home.jpg) left no-repeat;
+		background-size: contain;
 	}
 }
 
@@ -369,6 +618,10 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 	#menu-main li:hover ul {
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
+	}
+	
+	.search_area {
+		margin-right: 0;
 	}
 }
 
@@ -393,15 +646,21 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 		hyphens: auto;
 	}
 	
-	.inline > div:nth-child(1):nth-last-child(2),																																																																				.inline > div:nth-child(2):nth-last-child(1) {
+	.inline > div:nth-child(1):nth-last-child(2),
+																																																																																								.inline > div:nth-child(2):nth-last-child(1) {
 		width: 40%;
 	}
 	
-	.inline > div:nth-child(1):nth-last-child(3),																																																																					.inline > div:nth-child(3):nth-last-child(1) {
+	.inline > div:nth-child(1):nth-last-child(3),
+																																																																																								.inline > div:nth-child(2):nth-last-child(2),
+																																																																																								.inline > div:nth-child(3):nth-last-child(1) {
 		width: 40%;
 	}
 	
-	.inline > div:nth-child(1):nth-last-child(4),																																																																					.inline > div:nth-child(4):nth-last-child(1) {
+	inline > div:nth-child(1):nth-last-child(4),
+																																																																																								.inline > div:nth-child(2):nth-last-child(3),
+																																																																																								.inline > div:nth-child(3):nth-last-child(2),
+																																																																																								.inline > div:nth-child(4):nth-last-child(1) {
 		width: 40%;
 	}
 }
@@ -414,9 +673,23 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 	#menu-main li:hover ul li a {
 		width: 159px;
 	}
+}
+
+@media only screen and (min-device-width: 766px) {
+	.inline.home_page_inline div > * {
+		position: relative;
+	}
 	
-	.container #text-6 {
-		left: 225px;
+	.inline.home_page_inline >div:first-child > * {
+		margin-left: 0;
+	}
+	
+	.inline.home_page_inline >div:nth-child(2) > * {
+		margin-left: 30px;
+	}
+	
+	.inline.home_page_inline >div:last-child > * {
+		margin-right: -20px;
 	}
 }
 
@@ -443,39 +716,83 @@ a:link, a:visited, .primary-color, .menu-main .current_page_ancestor > a, .menu-
 		background-color: rgb(133,196,236);
 	}
 	
-	.inline > div:nth-child(1):nth-last-child(2),																																																																					.inline > div:nth-child(2):nth-last-child(1) {
+	.inline > div:nth-child(1):nth-last-child(2),
+																																																																																								.inline > div:nth-child(2):nth-last-child(1) {
+		width: 100%;
+	}
+	
+	.inline > div:nth-child(1):nth-last-child(3),
+																																																																																								.inline > div:nth-child(2):nth-last-child(2),
+																																																																																								.inline > div:nth-child(3):nth-last-child(1) {
+		width: 100%;
+	}
+	
+	.inline > div:nth-child(1):nth-last-child(4),
+																																																																																								.inline > div:nth-child(2):nth-last-child(3),
+																																																																																								.inline > div:nth-child(3):nth-last-child(2),
+																																																																																								.inline > div:nth-child(4):nth-last-child(1) {
 		width: 49%;
 	}
 	
-	.inline > div:nth-child(1):nth-last-child(3),																																																																		.inline > div:nth-child(3):nth-last-child(1) {
-		width: 49%;
+	#main_page_banner {
+		background: rgba(255,255,255,0);
+		padding: 0;
 	}
-	.inline > div:nth-child(1):nth-last-child(4),																																																																			.inline > div:nth-child(4):nth-last-child(1) {
-		width: 49%;
+	
+	#main_page_news {
+		width: 100%;
+		height: 100%;
+		float: left;
+		opacity: 1;
+		padding: 0;
 	}
 }
 
 @media only screen and (max-device-width: 766px) and (orientation:landscape) {
 	.container #text-6 {
-		margin-top: 68px;
+		margin-top: 50px;
 		left: -240px;
-		margin-bottom: 0;
+		margin-bottom: 30px;
+	}
+	
+	.search_area {
+		float: left;
 	}
 }
 
 @media only screen and (max-device-width: 540px) {
 	#header .site-logo {
-		width: 320px;
-		height: 86px;
+		width: 300px;
+		height: 80px;
 	}
-	.inline > div:nth-child(1):nth-last-child(2),																																																																					.inline > div:nth-child(2):nth-last-child(1) {
-		width: 50%;
+	
+	#main {
+		padding-top: 0;
 	}
-	.inline > div:nth-child(1):nth-last-child(3),																																																																			.inline > div:nth-child(3):nth-last-child(1) {
-		width: 50%;
+	
+	.inline > div:nth-child(1):nth-last-child(2),
+																																																																																								.inline > div:nth-child(2):nth-last-child(1) {
+		width: 100%;
 	}
-	.inline > div:nth-child(1):nth-last-child(4),																																																																			.inline > div:nth-child(4):nth-last-child(1) {
-		width: 50%;
+	
+	.inline > div:nth-child(1):nth-last-child(3),
+																																																																																								.inline > div:nth-child(2):nth-last-child(2),
+																																																																																								.inline > div:nth-child(3):nth-last-child(1) {
+		width: 100%;
+	}
+	
+	.inline > div:nth-child(1):nth-last-child(4),
+																																																																																								.inline > div:nth-child(2):nth-last-child(3),
+																																																																																								.inline > div:nth-child(3):nth-last-child(2),
+																																																																																								.inline > div:nth-child(4):nth-last-child(1) {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-device-width: 540px) and (orientation:landscape) {
+	#header .site-logo {
+		width: 480px;
+		height: 129px;
 	}
 }
 

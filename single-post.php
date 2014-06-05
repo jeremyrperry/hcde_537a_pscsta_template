@@ -6,7 +6,8 @@
 
 <div id="main" class="main">
 	<div class="container">
-		<section id="content" class="content <?php cpotheme_sidebar_position(); ?>">
+		<section id="content" class="content <?php cpotheme_sidebar_position(); ?> content_post">
+			<h1><?php echo get_the_title(); ?></h1>
 			<?php get_template_part('element', 'blog'); ?>
 			<?php if(get_the_author_meta('description')) cpotheme_post_authorbio(); ?>
 			<?php comments_template('', true); ?>

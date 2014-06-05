@@ -40,9 +40,9 @@
 		<?php if(cpotheme_get_option('cpo_postpage_preview') == '1' || is_singular()) 
 			the_content();
 		else 
-			the_excerpt(); ?>
+			echo get_my_excerpt(50).'...<br /><br />'; ?>
 		<?php if(!is_singular()): ?>
-		<a class="primary-color-bg readmore" href="<?php the_permalink(); ?>"><?php _e('Read More', 'cpotheme'); ?> &raquo;</a>
+		<a class="no_underline primary-color-bg readmore" href="<?php the_permalink(); ?>"><?php _e('Read More', 'cpotheme'); ?> &raquo;</a>
 		<?php else: ?>
 		<?php cpotheme_postpage_tags(); ?>
 		<?php endif; ?>
